@@ -1,0 +1,22 @@
+<!-- Renders post date, title, and snippet of text. -->
+<div class="py-2 mb-2 prose">
+    {% if post.chapter != "welcome"%}
+    <a class="no-underline h5 bold text-accent" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a>
+    {% endif %}
+  
+  <h2 class="h1 lh-condensed col-9 mt-0">
+    <a class="link-primary" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+  </h2>
+  <p>
+    {% if post.chapter != "welcome"%}
+      {{ post.content | strip_html | truncatewords:25 }}
+    {% endif %}
+
+    {% if post.title == "More and More People Want to Migrate" %}
+      {% include embedMP3.html %}
+    {% endif %}
+    {% if post.title == "US Allies Worry about Mattis’ Resignation" %}
+      {% include embedMP3.html %}
+    {% endif %}
+  </p>
+</div>
