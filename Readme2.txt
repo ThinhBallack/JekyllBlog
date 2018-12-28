@@ -1,0 +1,1 @@
+This blog is ready to report to teacher.
